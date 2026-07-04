@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamiya's Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <h1>
+                <a href="index.html">Kamiya's Blog</a>
+            </h1>
+
+            <p class="subtitle">
+                静岡県湖見市で暮らす会社員のブログ。<br>
+                休日に撮った写真や日常の出来事を気ままに書いています。
+            </p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">ホーム</a>
+        <a href="photos.html">写真</a>
+        <a href="#">プロフィール</a>
+        <a href="#">カテゴリー</a>
+    </nav>
+
+    <div class="container">
+
+        <main class="content">
+
+            <article class="article-box">
+
+                <div class="breadcrumb">
+                    <a href="index.html">ホーム</a> &gt; 記事
+                </div>
+
+                <h2 id="articleTitle" class="article-title"></h2>
+
+                <div id="articleDate" class="article-date"></div>
+
+                <div id="articleCategory" class="article-category"></div>
+
+                <div id="articleImage"></div>
+
+                <div id="articleBody" class="article-body"></div>
+
+                <div id="articleTags" class="article-tags"></div>
+
+                <section class="comments">
+
+                    <h3>コメント</h3>
+
+                    <div id="commentList"></div>
+
+                </section>
+
+                <div class="pager">
+
+                    <div id="prevPost"></div>
+
+                    <div id="nextPost"></div>
+
+                </div>
+
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="widget">
+                <h3>プロフィール</h3>
+                <p><strong>神谷</strong></p>
+                <p>静岡県湖見市在住</p>
+                <p>休日はカメラを持って景色を撮りに行くことが多いです。</p>
+            </div>
+
+            <div class="widget">
+                <h3>最新記事</h3>
+                <ul id="latestPosts"></ul>
+            </div>
+
+            <div class="widget">
+                <h3>カテゴリー</h3>
+                <ul>
+                    <li>日常</li>
+                    <li>写真</li>
+                    <li>散歩</li>
+                    <li>カメラ</li>
+                    <li>都市伝説</li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>月別アーカイブ</h3>
+                <ul>
+                    <li>2015年9月</li>
+                    <li>2015年8月</li>
+                    <li>2015年7月</li>
+                    <li>2015年6月</li>
+                    <li>2015年5月</li>
+                    <li>2015年4月</li>
+                    <li>2015年3月</li>
+                    <li>2015年2月</li>
+                    <li>2015年1月</li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>写真一覧</h3>
+                <a href="photos.html">写真ギャラリーを見る</a>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>© 2015 Kamiya's Blog</p>
+    </footer>
+
+    <script src="js/posts.js"></script>
+    <script src="js/article.js"></script>
+
+</body>
+</html>
