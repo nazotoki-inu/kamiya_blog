@@ -3,64 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>鍵付き記事 | Kamiya's Blog</title>
+  <title>限定公開記事 | Kamiya's Blog</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <header class="site-header">
   <div class="header-inner">
     <h1><a href="index.html">Kamiya's Blog</a></h1>
-    <p class="subtitle">
-      静岡県湖見市で暮らす会社員のブログ。<br>
-      休日に撮った写真や日常の出来事を気ままに書いています。
-    </p>
+    <p class="subtitle">静岡県湖見市で暮らす会社員のブログ。<br>休日に撮った写真や日常の出来事を気ままに書いています。</p>
   </div>
 </header>
-
-<nav class="navbar">
+<nav class="navbar" aria-label="メインナビゲーション">
   <a href="index.html">ホーム</a>
   <a href="photos.html">写真</a>
   <a href="profile.html">プロフィール</a>
 </nav>
-
 <div class="container">
   <main class="content">
     <article class="article-box">
-
-      <h2>限定公開記事</h2>
+      <h2 class="article-title">限定公開記事</h2>
       <p class="article-date">2015年9月17日（木） 01:32</p>
 
       <div id="lockBox" class="lock-box">
         <p>この記事はパスワードで保護されています。</p>
-        <input type="password" id="passwordInput" placeholder="パスワード">
-        <button onclick="checkPassword()">送信</button>
-        <p id="errorMessage" class="error-message"></p>
+        <div class="lock-form">
+          <label class="visually-hidden" for="passwordInput">パスワード</label>
+          <input type="password" id="passwordInput" placeholder="パスワード" autocomplete="off" autocapitalize="none" spellcheck="false">
+          <button id="unlockButton" type="button">送信</button>
+        </div>
+        <p id="errorMessage" class="error-message" aria-live="polite"></p>
       </div>
 
-      <div id="secretContent" class="secret-content" style="display:none;">
-        <h3>見つけたサイトについて</h3>
-
-        <p>先ほどの記事に書いた、古い動画サイトのURLをここに残しておきます。</p>
-
-        <p>念のため、公開記事には載せないことにしました。</p>
-
-        <p>
-          <a href="video.html">古い動画サイトへ</a>
-        </p>
-
-        <p>興味本位で見るようなものではないと思いますが、記録として残しておきます。</p>
+      <div id="secretContent" class="secret-content" hidden>
+        <p>念のため、URLだけ残しておきます。</p>
+        <p class="mystery-url"><a href="video.html">https://nazotoki-inu.github.io/kamiya_blog/video.html</a></p>
       </div>
-
+      <noscript><p class="error-message">この記事を表示するにはJavaScriptを有効にしてください。</p></noscript>
     </article>
   </main>
+  <aside class="sidebar">
+    <div class="widget"><h3>プロフィール</h3><p><strong>神谷</strong></p><p>静岡県湖見市在住</p></div>
+    <div class="widget"><h3>記事</h3><p><a href="index.html">記事一覧へ戻る</a></p></div>
+  </aside>
 </div>
-
-<footer>
-  <p>© 2015 Kamiya's Blog</p>
-</footer>
-
+<footer><p>© 2015 Kamiya's Blog</p></footer>
 <script src="js/locked.js"></script>
-
 </body>
 </html>

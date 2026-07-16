@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="Shift_JIS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video room</title>
+  <link rel="stylesheet" href="css/video.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="old-header">
+      <h1>HOME VIDEO ROOM</h1>
+      <p>個人撮影映像の保管ページ</p>
+    </header>
+
+    <div class="counter-row">
+      あなたは <span class="counter">000184</span> 人目の訪問者です
+    </div>
+
+    <main>
+      <section id="videoLock" class="password-box">
+        <h2>認証</h2>
+        <p>このページを見るにはパスワードが必要です。</p>
+        <div class="password-form">
+          <label for="videoPassword">PASSWORD：</label>
+          <input type="password" id="videoPassword" autocomplete="off" autocapitalize="none" spellcheck="false">
+          <button id="videoUnlockButton" type="button">入室</button>
+        </div>
+        <p id="videoError" class="video-error" aria-live="polite"></p>
+      </section>
+
+      <section id="videoArchive" class="archive-content" hidden>
+        <div class="notice-box">
+          <strong>動画一覧</strong><br>
+          家庭用ビデオカメラで撮影された映像を保存しています。
+        </div>
+
+        <article class="video-entry">
+          <h2>無題</h2>
+          <table class="video-info">
+            <tr><th>ファイル</th><td>homevideo_01</td></tr>
+            <tr><th>投稿日</th><td>2001年8月17日</td></tr>
+            <tr><th>時間</th><td>00:00:--</td></tr>
+            <tr><th>説明</th><td>撮影者・撮影場所不明</td></tr>
+          </table>
+
+          <div class="player-frame">
+            <video controls playsinline preload="metadata" poster="images/video-placeholder.svg">
+              <source src="videos/homevideo.mp4" type="video/mp4">
+              お使いのブラウザでは動画を再生できません。
+            </video>
+          </div>
+
+          <p class="small-note">※映像が再生されない場合は、しばらく待ってからもう一度お試しください。</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>管理人への連絡先はありません。</p>
+      <p>Last Update : 2006/09/04</p>
+    </footer>
+  </div>
+  <noscript><p class="noscript">このページを表示するにはJavaScriptを有効にしてください。</p></noscript>
+  <script src="js/video-lock.js"></script>
+</body>
+</html>

@@ -12,9 +12,12 @@ function renderLatest() {
     latest.forEach(post => {
         const li = document.createElement("li");
 
+        const postUrl = post.link || `article.html?id=${post.id}`;
+        const titlePrefix = post.locked ? "🔒 " : "";
+
         li.innerHTML = `
-            <a href="article.html?id=${post.id}">
-                ${post.title}
+            <a href="${postUrl}">
+                ${titlePrefix}${post.title}
             </a>
         `;
 

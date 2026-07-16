@@ -88,13 +88,14 @@ function renderPager(currentPost) {
 
     const prev = sorted[index - 1];
     const next = sorted[index + 1];
+    const postUrl = (item) => item.link || `article.html?id=${item.id}`;
 
     prevPost.innerHTML = prev
-        ? `<a href="article.html?id=${prev.id}">← ${prev.title}</a>`
+        ? `<a href="${postUrl(prev)}">← ${prev.locked ? "🔒 " : ""}${prev.title}</a>`
         : "";
 
     nextPost.innerHTML = next
-        ? `<a href="article.html?id=${next.id}">${next.title} →</a>`
+        ? `<a href="${postUrl(next)}">${next.locked ? "🔒 " : ""}${next.title} →</a>`
         : "";
 }
 
@@ -106,11 +107,13 @@ function renderLatest() {
         .slice(0, 5);
 
     latest.forEach(post => {
+        const postUrl = post.link || `article.html?id=${post.id}`;
+        const titlePrefix = post.locked ? "🔒 " : "";
         const li = document.createElement("li");
 
         li.innerHTML = `
-            <a href="article.html?id=${post.id}">
-                ${post.title}
+            <a href="${postUrl}">
+                ${titlePrefix}${post.title}
             </a>
         `;
 

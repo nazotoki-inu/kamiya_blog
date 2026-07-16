@@ -339,3 +339,31 @@ footer {
     background: #fff;
     border: 1px solid #ddd;
 }
+.lock-form{display:flex;gap:6px;align-items:center}.secret-content[hidden],.lock-box[hidden]{display:none}.mystery-url{overflow-wrap:anywhere;font-family:monospace}.mystery-url a{color:#456d87}@media(max-width:520px){.lock-form{display:block}.lock-box input{width:100%;margin:0 0 8px}.lock-box button{width:100%}}
+
+
+/* カテゴリー・月別アーカイブ */
+.sidebar-filter {
+    display: inline;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #456d87;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sidebar-filter:hover,
+.sidebar-filter.active {
+    color: #243f52;
+    text-decoration: underline;
+}
+
+.empty-result {
+    padding: 28px 18px;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #777;
+    text-align: center;
+}

@@ -7,7 +7,9 @@ const photoGrid = document.getElementById("photoGrid");
 const photoCount = document.getElementById("photoCount");
 const latestPosts = document.getElementById("latestPosts");
 
-const photoPosts = posts.filter(post => post.image);
+const photoPosts = posts
+    .filter(post => post.image)
+    .sort((a, b) => b.id.localeCompare(a.id));
 
 renderPhotos();
 renderLatest();
@@ -23,7 +25,7 @@ function renderPhotos() {
 
         div.innerHTML = `
             <a href="article.html?id=${post.id}">
-                <img src="${post.image}" alt="${post.title}">
+                <img src="${post.image}" alt="${post.title}" loading="lazy">
                 <p>${post.title}</p>
                 <span>${post.date}</span>
             </a>
@@ -43,9 +45,12 @@ function renderLatest() {
     latest.forEach(post => {
         const li = document.createElement("li");
 
+        const postUrl = post.link || `article.html?id=${post.id}`;
+        const titlePrefix = post.locked ? "🔒 " : "";
+
         li.innerHTML = `
-            <a href="article.html?id=${post.id}">
-                ${post.title}
+            <a href="${postUrl}">
+                ${titlePrefix}${post.title}
             </a>
         `;
 
