@@ -22,6 +22,9 @@ const post = posts.find(item => item.id === postId);
 if (!post) {
     articleTitle.textContent = "記事が見つかりません";
     articleBody.innerHTML = `<p>指定された記事は存在しません。</p>`;
+} else if (post.locked && post.link) {
+    // 限定公開記事を article.html で直接開いた場合も、専用ページへ移動する。
+    window.location.replace(post.link);
 } else {
     renderArticle(post);
     renderComments(post);
